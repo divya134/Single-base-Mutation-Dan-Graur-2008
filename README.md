@@ -12,7 +12,7 @@ If single nucleotide change results in a codon which codes for different amino a
 If single nucleotide change results in a stop codon, it is called non-sense mutation. Single nucleotide mutations are of evolutionary 
 importance and medical importance (disease condition).
 
-# Classify_single_base_mutation.py
+# classify_single_base_mutation.py
 
 The script is developed to classify and calculate the possibilites of single nucelotide changes in the codons from standard codon table based on their effects (type of mutations).
 
