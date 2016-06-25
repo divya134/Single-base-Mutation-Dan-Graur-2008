@@ -1,0 +1,25 @@
+Total mutations in pos=1         : 183
+
+Synonymous mutations in pos=1    : 8    4.0 %
+Non-Synonymous mutations in pos=1: 175	96.0 %
+Missense mutations in pos=1      : 166	91.0 %
+Non-sense mutations in pos=1     : 9    5.0 %
+
+Total mutations in pos=2         : 183
+
+Synonymous mutations in pos=2    : 0    0.0 %
+Non-Synonymous mutations in pos=2: 183	100.0 %
+Missense mutations in pos=2      : 176	96.0 %
+Non-sense mutations in pos=2     : 7    4.0 %
+
+Total mutations in pos=3         : 183
+
+Synonymous mutations in pos=3    : 126	69.0 %
+Non-Synonymous mutations in pos=3: 57   31.0 %
+Missense mutations in pos=3      : 50   27.0 %
+Non-sense mutations in pos=3     : 7    4.0 %
+
+Total mutations                  : 549
+
+Total synonymous mutations       : 134	24.0 %
+Total non-synonymous mutations   : 415	76.0 %
