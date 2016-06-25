@@ -1,7 +1,7 @@
 #! /usr/bin/python
 
 codon={}
-with open("codontable_wo","r") as text:  
+with open("input_codon_table.txt","r") as text:  
 	for line in text:
 		key, value=line.split()
 		codon[key]=value
