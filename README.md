@@ -1,7 +1,6 @@
 # Single-base Mutation, Dan Graur 2008
 # You can find this paper in http://ow.ly/g0wC301CALf
 # Script developed by Divya Selvaraju
-
 #! /usr/bin/python
 
 codon={}
