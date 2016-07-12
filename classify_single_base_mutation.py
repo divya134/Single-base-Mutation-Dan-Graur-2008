@@ -1,5 +1,3 @@
-#-----------------------------------------[SCRIPT : TO CLASSIFY SINGLE BASE MUTATIONS]-----------------------------------------------------
-
 # Script     : classify_single_base_mutation.py
 # Usage      : Classify different types of single base mutations using codon table
 # Author     : Divya Selvaraju
@@ -14,22 +12,22 @@ with open("input_codon_table.txt","r") as text:			# Opening input file as text
 	n={1,2,3}
 	count_tsyn=0
 	count_tnsyn=0
-	for j in n:						
-		count_syn=0
-		count_nsyn=0
-		count_non=0
-		count_mis=0
-		for i in codon.keys():
+	for j in n:						# To check at 3 positions of the codon when nucleotide changes			
+		count_syn=0					
+		count_nsyn=0				 
+		count_non=0					
+		count_mis=0					
+		for i in codon.keys():				#  Looping through all the codons			
 			l=[]
-			l.extend(i[0])
+			l.extend(i[0])				
 			l.extend(i[1])
 			l.extend(i[2])
 			nt=['A','T','G','C']
 			a=''.join(l)
 			l[j-1]=nt[0]
 			b=''.join(l)
-			WC=codon.get(b)
-			WOC=codon.get(a)
+			WC=codon.get(b)				# With change - Mutated at position 1 with A
+			WOC=codon.get(a)			# Without change - Original codon
 			if a!=b:
 				if WC==WOC:
 					#print "Synonymous mutation : %s -> %s" % (a,b)
@@ -47,8 +45,7 @@ with open("input_codon_table.txt","r") as text:			# Opening input file as text
                 	l[j-1]=nt[1]
                 	b=''.join(l)
                 	#print b
-                	WC=codon.get(b)
-                	WOC=codon.get(a)
+                	WC=codon.get(b)				# With change - Mutated at position 1 with T
 			if a!=b:
                 		if WC==WOC:
                                 	#print "Synonymous mutation : %s -> %s" % (a,b)
@@ -64,8 +61,7 @@ with open("input_codon_table.txt","r") as text:			# Opening input file as text
 						count_mis+=1
 			l[j-1]=nt[2]
                 	b=''.join(l)
-                	WC=codon.get(b)
-                	WOC=codon.get(a)
+                	WC=codon.get(b)				# With change - Mutated at position 1 with G
 			if a!=b:
           			if WC==WOC:
                                 	#print "Synonymous mutation : %s -> %s" % (a,b)
@@ -83,8 +79,7 @@ with open("input_codon_table.txt","r") as text:			# Opening input file as text
 			l[j-1]=nt[3]
                 	b=''.join(l)
                 	#print b
-                	WC=codon.get(b)
-                	WOC=codon.get(a)
+                	WC=codon.get(b)				# With change - Mutated at position 1 with C
 			if a!=b:
                 		if WC==WOC:
                                 	#print "Synonymous mutation : %s -> %s" % (a,b)
