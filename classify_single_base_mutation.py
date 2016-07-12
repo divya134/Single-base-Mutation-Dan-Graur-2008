@@ -1,15 +1,20 @@
+#-----------------------------------------[SCRIPT : TO CLASSIFY SINGLE BASE MUTATIONS]-----------------------------------------------------
+
+# Script     : classify_single_base_mutation.py
+# Usage      : Classify different types of single base mutations using codon table
+# Author     : Divya Selvaraju
+
 #! /usr/bin/python
 
 codon={}
-with open("input_codon_table.txt","r") as text:  
+with open("input_codon_table.txt","r") as text:			# Opening input file as text 
 	for line in text:
-		key, value=line.split()
-		codon[key]=value
+		key, value=line.split()				# Spliting the line and storing in two separate variables	
+		codon[key]=value				# Assigning key and value to dictionary
 	n={1,2,3}
 	count_tsyn=0
 	count_tnsyn=0
-	for j in n:
-		m=1
+	for j in n:						
 		count_syn=0
 		count_nsyn=0
 		count_non=0
@@ -21,7 +26,7 @@ with open("input_codon_table.txt","r") as text:
 			l.extend(i[2])
 			nt=['A','T','G','C']
 			a=''.join(l)
-			l[j-m]=nt[0]
+			l[j-1]=nt[0]
 			b=''.join(l)
 			WC=codon.get(b)
 			WOC=codon.get(a)
@@ -39,7 +44,7 @@ with open("input_codon_table.txt","r") as text:
 						#print "Missense mutation : %s -> %s" % (a,b)
 						count_mis+=1
 			
-                	l[j-m]=nt[1]
+                	l[j-1]=nt[1]
                 	b=''.join(l)
                 	#print b
                 	WC=codon.get(b)
@@ -57,7 +62,7 @@ with open("input_codon_table.txt","r") as text:
 					else:
 						#print "Missense mutation : %s -> %s" % (a,b)
 						count_mis+=1
-			l[j-m]=nt[2]
+			l[j-1]=nt[2]
                 	b=''.join(l)
                 	WC=codon.get(b)
                 	WOC=codon.get(a)
@@ -75,7 +80,7 @@ with open("input_codon_table.txt","r") as text:
 						#print "Missense mutation : %s -> %s" % (a,b)
 						count_mis+=1
 
-			l[j-m]=nt[3]
+			l[j-1]=nt[3]
                 	b=''.join(l)
                 	#print b
                 	WC=codon.get(b)
@@ -106,6 +111,7 @@ with open("input_codon_table.txt","r") as text:
 		print "Non-Synonymous mutations in pos=%s: %s\t%s %%" % (j,count_nsyn,nsyn_per)
 		print "Missense mutations in pos=%s      : %s\t%s %%" % (j,count_mis,mis_per)
 		print "Non-sense mutations in pos=%s     : %s\t%s %%\n" % (j,count_non,non_per)
+	
 	t=count_tsyn+count_tnsyn
 	s=round(float(count_tsyn)/float(t)*100)
 	ns=round(float(count_tnsyn)/float(t)*100)		
